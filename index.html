@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+<script src="https://unpkg.com/vue"></script>
+<title>home</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- Axios -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+<nav class="navbar navbar-static-top top-nav">
+  <div class="container "> <a class="navbar-brand" href="#">Semua Ada</a>
+    <button class="navbar-toggler hidden-md-up collapsed" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation"> ☰ </button>
+    <div class="navbar-toggleable-sm collapse" id="exCollapsingNavbar2">
+      <ul class="nav navbar-nav float-xs-right">
+        <li class="nav-item active"> <a class="nav-link" href="#myCarousel">Home <span class="sr-only">(current)</span></a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#services">Cart</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#contact">Checkout</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Categories</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="#" class="card-link"><i class="fa fa-star"></i>Sepeda 1</a></li>
+            <li class="list-group-item"><a href="#" class="card-link"><i class="fa fa-star"></i>Sepeda 2</a></li>
+            <li class="list-group-item"><a href="#" class="card-link"><i class="fa fa-star"></i>Sepeda 3</a></li>
+            <li class="list-group-item"><a href="#" class="card-link"><i class="fa fa-star"></i>Sepeda 4</a></li>
+          </ul>
+        </div>
+        <!-- <div class="card card-block text-xs-center">
+          <h3 class="card-title">Special</h3>
+          <p class="card-text">Card Satu</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a> </div> -->
+        <div class="side-product">
+          <h5>Similar Products</h5>
+          <div class="media"> <a class="media-left" href="#"> <img class="media-object" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width:64px; height:64px;"> </a>
+            <div class="media-body">
+              <h5 class="media-heading">Media heading</h5>
+              <p class="price"><strong>Rp. 500.000</strong>
+            </div>
+          </div>
+          <div class="media"> <a class="media-left" href="#"> <img class="media-object" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width:64px; height:64px;"> </a>
+            <div class="media-body">
+              <h5 class="media-heading">Media heading</h5>
+              <p class="price"><strong>Rp. 500.000</strong>
+            </div>
+          </div>
+          <div class="media"> <a class="media-left" href="#"> <img class="media-object" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width:64px; height:64px;"> </a>
+            <div class="media-body">
+              <h5 class="media-heading">Media heading</h5>
+              <p class="price"><strong>Rp. 500.000</strong>
+            </div>
+          </div>
+          <div class="media"> <a class="media-left" href="#"> <img class="media-object" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width:64px; height:64px;"> </a>
+            <div class="media-body">
+              <h5 class="media-heading">Media heading</h5>
+              <p class="price"><strong>Rp. 500.000</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active"> <img src="..." alt="First slide"> </div>
+            <div class="carousel-item"> <img src="..." alt="Second slide"> </div>
+            <div class="carousel-item"> <img src="..." alt="Third slide"> </div>
+          </div>
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="icon-prev" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <span class="icon-next" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+        <div class="product-block">
+          <h3>Featured Products</h3>
+          <div class="row">
+            <div v-for="book in books">
+              <div class="col-md-4">
+                <div class="card text-xs-center"> <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Card image cap">
+                  <div class="card-block">
+                    <h5 class="card-title">{{book.tittle}}</h5>
+                    <p class="card-text price">Rp. 500.000</p>
+                    <span class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span> <a href="#" class="btn btn-success">Add to Cart</a> </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+        <div class="product-block">
+          <h3>Recent Products</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card text-xs-center"> <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Card image cap">
+                <div class="card-block">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text price">Rp. 500.000</p>
+                  <span class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span> <a href="#" class="btn btn-success">Add to Cart</a> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-xs-center"> <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Card image cap">
+                <div class="card-block">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text price">Rp. 500.000</p>
+                  <span class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span> <a href="#" class="btn btn-success">Add to Cart</a> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-xs-center"> <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Card image cap">
+                <div class="card-block">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text price">Rp. 500.000</p>
+                  <span class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span> <a href="#" class="btn btn-success">Add to Cart</a> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-xs-center"> <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Card image cap">
+                <div class="card-block">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text price">Rp. 500.000</p>
+                  <span class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span> <a href="#" class="btn btn-success">Add to Cart</a> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-xs-center"> <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Card image cap">
+                <div class="card-block">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text price">Rp. 500.000</p>
+                  <span class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span> <a href="#" class="btn btn-success">Add to Cart</a> </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card text-xs-center"> <img class="card-img-top" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Card image cap">
+                <div class="card-block">
+                  <h5 class="card-title">Product Name</h5>
+                  <p class="card-text price">Rp. 500.000</p>
+                  <span class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span> <a href="#" class="btn btn-success">Add to Cart</a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="list-unstyled">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <address>
+        <strong>Nabila Inc</strong><br>
+        Magelang<br>
+        <abbr title="Phone">Phone:</abbr> (123) 456-7890
+        </address>
+        <address>
+        <strong>Ahmad Nasikin</strong><br>
+        <a href="mailto:#">nabila@example.com</a>
+        </address>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="copyright">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p>© 2017 - Ahmad Nasikin</p>
+      </div>
+      <div class="col-md-6">
+        <ul class="bottom_ul">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Call to Action</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="js/index.js">
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyCZ3R3HV2ECPiClKyFX8Y_UMFg6T_2L1e0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.min.js"></script>
+
+</body>
+</html>
